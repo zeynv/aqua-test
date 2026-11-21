@@ -1,0 +1,80 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --font-sans: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    --font-mono: 'JetBrains Mono', ui-monospace, SFMono-Regular, monospace;
+  }
+
+  html,
+  body,
+  #root {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    font-family: var(--font-sans);
+    background-color: #070b10;
+    color: #f1f5f9;
+  }
+}
+
+.font-mono-tabular {
+  font-family: var(--font-mono);
+  font-variant-numeric: tabular-nums;
+}
+
+/* Custom sleek range slider for aquarium controls */
+input[type='range'].aqua-slider {
+  -webkit-appearance: none;
+  appearance: none;
+  background: transparent;
+  cursor: pointer;
+}
+
+input[type='range'].aqua-slider::-webkit-slider-runnable-track {
+  height: 4px;
+  border-radius: 9999px;
+  background: rgba(148, 163, 184, 0.24);
+}
+
+input[type='range'].aqua-slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 14px;
+  height: 14px;
+  border-radius: 9999px;
+  background: #38bdf8;
+  border: 2px solid #0b1118;
+  margin-top: -5px;
+  box-shadow: 0 0 0 1px rgba(56, 189, 248, 0.45);
+  transition: transform 0.14s cubic-bezier(0.16, 1, 0.3, 1), background-color 0.14s ease;
+}
+
+input[type='range'].aqua-slider::-webkit-slider-thumb:hover {
+  transform: scale(1.16);
+  background: #7dd3fc;
+}
+
+input[type='range'].aqua-slider::-moz-range-track {
+  height: 4px;
+  border-radius: 9999px;
+  background: rgba(148, 163, 184, 0.24);
+}
+
+input[type='range'].aqua-slider::-moz-range-thumb {
+  width: 14px;
+  height: 14px;
+  border-radius: 9999px;
+  background: #38bdf8;
+  border: 2px solid #0b1118;
+  box-shadow: 0 0 0 1px rgba(56, 189, 248, 0.45);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+  }
+}
